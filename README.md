@@ -11,9 +11,9 @@
 ## 各テーブルのカラムと型とアソシエーション
 ### users
 
-  #### users has_many products  
-  #### user has_many likes  
-  #### user has_many comments  
+  #### has_many prototypes  
+  #### has_many likes  
+  #### has_many comments  
 
     ・name---string
     ・profile---text
@@ -23,36 +23,37 @@
     ・password---deviseを使用
     ・avatar---carriewaveを使用
 
-### products
+### prototypes
 
-  #### products belongs_to user  
-  #### products has_many comments  
-  #### products has_many likes  
-  #### products has_many thumbnails  
+  ####  belongs_to user  
+  ####  has_many comments  
+  ####  has_many likes  
+  ####  has_many thumbnails  
 
   ・title---string  
   ・catch_copy---string  
   ・concept---text  
+  ・user_id---integer  
 
 ### thumbnails
 
-  #### thumbnails belongs_to products  
+  #### belongs_to prototype  
 
-  ・images---enum  
+  ・images---integer
   ・product_id---integer  
 
 ### likes
 
-  #### likes belongs_to user  
-  #### likes belongs_to products  
+  #### belongs_to user  
+  #### belongs_to prototype  
 
   ・user_id---integer  
   ・product_id---integer  
 
 ### comments
 
-  #### comments belongs_to user  
-  #### comments belongs_to product  
+  #### belongs_to user  
+  #### belongs_to prototype  
 
   ・text---text  
   ・user_id---integer  
