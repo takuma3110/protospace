@@ -1,59 +1,59 @@
 # protospace
 
 
-##作成するテーブル  
+## 作成するテーブル  
   ・users  
   ・products  
-  ・sub_thumbnails  
+  ・thumbnails  
   ・comments  
   ・likes  
 
-##各テーブルのカラムと型
-###users
+## 各テーブルのカラムと型とアソシエーション
+### users
+
+  #### users has_many products  
+  #### user has_many likes  
+  #### user has_many comments  
+
     ・name---string
     ・profile---text
     ・position---string
     ・occupation---string
     ・email---deviseを使用
     ・password---deviseを使用
-    ・image---paperclipを使用
-    
-###products
+    ・avatar---carriewaveを使用
+
+### products
+
+  #### products belongs_to user  
+  #### products has_many comments  
+  #### products has_many likes  
+  #### products has_many thumbnails  
+
   ・title---string  
-  ・main_thumbnail---paperclipを使用  
   ・catch_copy---string  
   ・concept---text  
 
-###sub_thumbnails
-  ・image---paperclipを使用  
+### thumbnails
+
+  #### thumbnails belongs_to products  
+
+  ・images---enum  
   ・product_id---integer  
-  
-###likes
+
+### likes
+
+  #### likes belongs_to user  
+  #### likes belongs_to products  
+
   ・user_id---integer  
   ・product_id---integer  
 
-###comments
-  ・comment---text  
+### comments
+
+  #### comments belongs_to user  
+  #### comments belongs_to product  
+
+  ・text---text  
   ・user_id---integer  
   ・product_id---integer  
-  
-
-##アソシエーション
-  users has_many products  
-  user has_many likes  
-  user has_many comments  
-
-  products belongs_to user  
-  products has_many comments  
-  products has_many likes  
-  products has_many sub_thumbnails  
-
-  comments belongs_to user  
-  comments belongs_to product  
-
-  likes belongs_to user  
-  likes belongs_to products  
-
-  sub_thumbnails belongs_to products  
-
-  sub_thumbnails belongs_to products  
