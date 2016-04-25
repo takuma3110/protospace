@@ -3,7 +3,7 @@
 
 ## 作成するテーブル  
   ・users  
-  ・products  
+  ・prototypes  
   ・thumbnails  
   ・comments  
   ・likes  
@@ -39,7 +39,7 @@
 
   #### belongs_to prototype  
 
-  ・images---integer
+  ・status---integer
   ・product_id---integer  
 
 ### likes
