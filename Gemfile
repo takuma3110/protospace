@@ -47,4 +47,5 @@ end
 gem 'haml'
 gem 'erb2haml'
 gem 'bootstrap-sass'
+gem 'devise'
 
