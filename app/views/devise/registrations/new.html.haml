@@ -7,12 +7,12 @@
           %h2 Register
           .user-name_image.row
             .user-name.col-md-10
-              = f.text_field :name, placeholder: "NAME"
+              = f.text_field :name, placeholder: "NAME",autofocus: true, required: true
             .user-image.col-md-2
               %button.btn.btn-primary Add image
               = f.file_field :avatar
           .user-email
-            = f.email_field :email, placeholder: "email",autofocus: true
+            = f.email_field :email, placeholder: "email"
           .user-password
             = f.password_field :password, placeholder: "password", autocomplete: "off"
         .col-md-12

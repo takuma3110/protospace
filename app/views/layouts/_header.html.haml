@@ -7,14 +7,6 @@
     %a.navbar-brand(href="/")
       = image_tag("logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "36px")
     .navbar-collapse.collapse.navbar-responsive-collapse
-      //not login
-      - unless user_signed_in?
-        %ul.nav.navbar-nav.navbar-right
-          %li
-            .btn.btn-primary.navbar-btn
-              %a{href: "/users/sign_in"}
-                Get Started
-      //login
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
           %li.dropdown
@@ -31,3 +23,9 @@
           %li
             .btn.btn-primary.navbar-btn
               %a{href: "/prototypes/new"} New Proto
+      - else
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            .btn.btn-primary.navbar-btn
+              %a{href: "/users/sign_in"}
+                Get Started
