@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :user_name << :avatar << :member << :profile << :works
+    devise_parameter_sanitizer.for(:sign_up).push(:name, :avatar, :member, :profile, :works)
+    devise_parameter_sanitizer.for(:account_update).push(:name, :avatar, :member, :profile, :works)
   end
 end
