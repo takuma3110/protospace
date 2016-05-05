@@ -23,9 +23,11 @@
               %span.caret
             %ul.dropdown-menu{role: "menu"}
               %li
-                %a{href: "/users/#{current_user.id}/edit"} Profile Edit
+                = link_to 'My Page', user_path(current_user.id)
               %li
-                %a{href: "/users/sign_out"} Logout
+                = link_to 'Profile Edit', edit_user_path(current_user.id)
+              %li
+                = link_to 'Logout', destroy_user_session_path, method: :delete
           %li
             .btn.btn-primary.navbar-btn
               %a{href: "/prototypes/new"} New Proto
