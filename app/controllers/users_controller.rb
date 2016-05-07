@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    flash[:success] = 'success!'
+    flash[:success] = 'update success'
     current_user.update(update_params)
     redirect_to action: :show
   end
