@@ -7,8 +7,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    - flash.each do |type, msg|
-      %div{class: "alert alert-#{type}"}= msg
     = render "layouts/header"
+    = render 'layouts/messages'
     = yield
     = render "layouts/footer"

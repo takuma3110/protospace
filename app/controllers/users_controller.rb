@@ -5,9 +5,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    flash[:success] = 'success!'
-    current_user.update(update_params)
-    redirect_to action: :show
+     flash[:success] = 'Your data was successfully updated'
+    current_user.update(user_params)
+     redirect_to action: :show
   end
 
   def show
@@ -18,7 +18,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def update_params
+  def user_params
     params.require(:user).permit(:name, :email, :member, :works, :profile, :member, :password)
   end
+
 end
+
