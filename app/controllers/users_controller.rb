@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: :edit
+  before_action :set_user, only: [:edit, :show]
 
   def edit
   end
@@ -23,4 +23,5 @@ class UsersController < ApplicationController
   end
 
 end
+
 
