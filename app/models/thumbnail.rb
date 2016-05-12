@@ -3,3 +3,4 @@ class Thumbnail < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   enum status: [ :main, :sub ]
 end
+
