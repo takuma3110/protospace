@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160512103214) do
   end
 
   create_table "thumbnails", force: :cascade do |t|
+    t.string   "image",        limit: 255
     t.integer  "status",       limit: 4
     t.integer  "prototype_id", limit: 4
     t.datetime "created_at"
