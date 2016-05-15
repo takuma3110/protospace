@@ -13,7 +13,7 @@ class PrototypesController < ApplicationController
     if @prototype.save
       redirect_to action: :index
     else
-      flash[:alert] = "failed"
+      flash.now[:alert] = "failed"
       render new_prototype_path
     end
   end
