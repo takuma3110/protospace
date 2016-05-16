@@ -11,7 +11,7 @@ class PrototypesController < ApplicationController
   def create
     @prototype = current_user.prototypes.new(prototype_params)
     if @prototype.save
-      redirect_to action: :index
+      redirect_to root_url, success: 'success'
     else
       flash.now[:alert] = "failed"
       render new_prototype_path

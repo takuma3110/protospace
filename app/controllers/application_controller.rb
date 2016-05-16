@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  add_flash_types :success, :info, :warning, :danger
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up).push(:name, :avatar, :member, :profile, :works)
     devise_parameter_sanitizer.for(:account_update).push(:name, :avatar, :member, :profile, :works)
