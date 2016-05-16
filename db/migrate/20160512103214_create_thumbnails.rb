@@ -3,8 +3,8 @@ class CreateThumbnails < ActiveRecord::Migration
     create_table :thumbnails do |t|
       t.string :image
       t.integer :status
-      t.integer :prototype_id
       t.timestamps
     end
+    add_reference :thumbnails, :prototype, index: true, foreign_key: true
   end
 end
