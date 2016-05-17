@@ -1,6 +1,7 @@
 class PrototypesController < ApplicationController
 
   def index
+    @prototypes = Prototype.order("created_at DESC")
   end
 
   def new
@@ -19,6 +20,8 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    @prototype = Prototype.find(params[:id])
+    @sub_images = @prototype.thumbnails.sub
   end
 
   private
