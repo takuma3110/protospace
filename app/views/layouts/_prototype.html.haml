@@ -1,0 +1,19 @@
+.container.proto-list
+  .row
+    - @prototypes.each do |proto|
+      .col-sm-4.col-md-3.proto-content
+        .thumbnail
+          = link_to image_tag(proto.thumbnails.main[0].image), prototype_path(proto.id)
+          .caption
+            %h3
+              = link_to proto.title, prototype_path(proto.id)
+            .proto-meta
+              .proto-user
+                = link_to proto.user.name, user_path(proto.user.id)
+              .proto-posted
+                = l proto.created_at, format: :default
+            %ul.proto-tag-list.list-inline
+              %li
+                %a{href: "#", class: "btn btn-default"} iPad
+              %li
+                %a{href: "#", class: "btn btn-default"} wireframe
