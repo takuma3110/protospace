@@ -1,6 +1,7 @@
 class PrototypesController < ApplicationController
 
   def index
+    @prototypes = Prototype.eager_load(:user, :main_image).order("prototypes.created_at DESC")
   end
 
   def new
@@ -19,6 +20,8 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    @prototype = Prototype.find(params[:id])
+    @sub_images = @prototype.thumbnails.sub
   end
 
   private
