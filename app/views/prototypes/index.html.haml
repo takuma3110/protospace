@@ -11,8 +11,9 @@
         %li{role: "presentation"}
           %a{href: "#"} Newest PROTO
       %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
-
-= render partial: 'layouts/prototype', locals: { prototypes: @prototypes }
+.container.proto-list
+  .row
+    = render partial: 'layouts/prototype', collection: @prototypes
 
 .text-center
   %ul.pagination
