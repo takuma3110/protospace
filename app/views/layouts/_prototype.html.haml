@@ -1,6 +1,6 @@
 .container.proto-list
   .row
-    - @prototypes.each do |proto|
+    - prototypes.each do |proto|
       .col-sm-4.col-md-3.proto-content
         .thumbnail
           = link_to image_tag(proto.thumbnails.main[0].image), prototype_path(proto.id)

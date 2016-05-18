@@ -12,7 +12,7 @@
           %a{href: "#"} Newest PROTO
       %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
 
-= render 'layouts/prototype', locals: { prototypes: @prototypes }
+= render partial: 'layouts/prototype', locals: { prototypes: @prototypes }
 
 .text-center
   %ul.pagination
