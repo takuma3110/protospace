@@ -1,4 +1,5 @@
 class PrototypesController < ApplicationController
+  before_action :set_prototype, only: [:edit,:show, :update]
 
   def index
     @prototypes = Prototype.eager_load(:user, :main_image).order("prototypes.created_at DESC")
@@ -19,15 +20,29 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    flash[:success] = 'Your data was successfully updated'
+    @prototype.update(prototype_params)
+    redirect_to action: :show
+  end
+
   def show
-    @prototype = Prototype.find(params[:id])
     @sub_images = @prototype.thumbnails.sub
+  end
+
+  def destroy
   end
 
   private
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, :user_id ,thumbnails_attributes: [:image, :status, :prototype_id])
+  end
 
+  def set_prototype
+    @prototype = Prototype.find(params[:id])
   end
 end
 
