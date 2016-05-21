@@ -1,0 +1,39 @@
+.container.proto-new
+  - if @prototype.errors.any?
+    - @prototype.errors.full_messages.each do |message|
+      = message
+  = form_for(@prototype) do |f|
+    =f.hidden_field :user_id, value: current_user.id
+    .col-md-8.col-md-offset-2
+      %header.row.user-nav.row
+        .col-md-12
+          = f.text_field :title, placeholder: "Title", required: true, autofocus: true, class: "proto-new-title"
+      .col-md-12
+        .cover-image-upload
+          = f.fields_for :thumbnails, @main do |thumbnails_form|
+            = thumbnails_form.file_field :image
+            = thumbnails_form.hidden_field :status, value: "main"
+      .col-md-12
+        %ul.proto-sub-list.list-group
+          = f.fields_for :thumbnails, @sub do |thumbnails_form|
+            %li.list-group-item.col-md-4
+              .image-upload
+                = thumbnails_form.file_field :image
+                = thumbnails_form.hidden_field :status, value: "sub"
+      .row.proto-description
+        .col-md-12
+          =f.text_field :catch_copy, placeholder: "Catch copy"
+        .col-md-12
+          =f.text_field :concept, placeholder: "Concept", rows: 4, cols: 30
+        .col-md-12
+          %h4 Tag List
+          .row
+            .col-md-3
+              %input{type: "text", placeholder: "Web Design"}/
+            .col-md-3
+              %input{type: "text", placeholder: "UI"}/
+            .col-md-3
+              %input{type: "text", placeholder: "Application"}/
+    .row.text-center.proto-btn
+      %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Publish
+

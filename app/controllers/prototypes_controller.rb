@@ -21,12 +21,17 @@ class PrototypesController < ApplicationController
   end
 
   def edit
+    @main = @prototype.main_image
+    @sub = @prototype.sub_images
   end
 
   def update
-    flash[:success] = 'Your data was successfully updated'
-    @prototype.update(prototype_params)
-    redirect_to action: :show
+    if @prototype.update(prototype_params)
+      redirect_to root_url, success: 'success'
+    else
+      flash.now[:alert] = "failed"
+      render :edit
+    end
   end
 
   def show
