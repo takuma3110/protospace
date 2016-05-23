@@ -26,7 +26,7 @@ class PrototypesController < ApplicationController
   end
 
   def update
-    if @prototype.update(prototype_params)
+    if @prototype.update(update_params)
       redirect_to root_url, success: 'success'
     else
       flash.now[:alert] = "failed"
@@ -51,6 +51,10 @@ class PrototypesController < ApplicationController
 
   def set_prototype
     @prototype = Prototype.find(params[:id])
+  end
+
+  def update_params
+    params.require(:prototype).permit(:title, :catch_copy, :concept, :user_id ,thumbnails_attributes: [:id, :image, :status, :prototype_id])
   end
 end
 
