@@ -27,7 +27,7 @@ class PrototypesController < ApplicationController
 
   def update
     if @prototype.update(update_params)
-      redirect_to root_url, success: 'success'
+      redirect_to root_url, success: 'updating is successful'
     else
       flash.now[:alert] = "failed"
       render :edit
@@ -40,7 +40,7 @@ class PrototypesController < ApplicationController
 
   def destroy
     @prototype.destroy
-    redirect_to :root, success: "success"
+    redirect_to :root, success: "deleting is successful"
 
   end
 
