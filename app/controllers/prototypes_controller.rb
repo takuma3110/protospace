@@ -22,6 +22,7 @@ class PrototypesController < ApplicationController
 
   def edit
     @main = @prototype.main_image
+    @sub = @prototype.set_sub_img
   end
 
   def update
@@ -55,5 +56,5 @@ class PrototypesController < ApplicationController
   def update_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, :user_id ,thumbnails_attributes: [:id, :image, :status, :prototype_id])
   end
-end
 
+end

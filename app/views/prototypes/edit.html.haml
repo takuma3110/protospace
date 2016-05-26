@@ -15,12 +15,11 @@
             = thumbnails_form.hidden_field :status, value: "main"
       .col-md-12
         %ul.proto-sub-list.list-group
-          - 3.times do
+          = f.fields_for :thumbnails, @sub do |thumbnails_form|
             %li.list-group-item.col-md-4
               .image-upload
-                = f.fields_for :thumbnails do |thumbnails_form|
-                  = thumbnails_form.file_field :image
-                  = thumbnails_form.hidden_field :status, value: "sub"
+                = thumbnails_form.file_field :image
+                = thumbnails_form.hidden_field :status, value: "sub"
       .row.proto-description
         .col-md-12
           =f.text_field :catch_copy, placeholder: "Catch copy"
