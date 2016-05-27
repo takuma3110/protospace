@@ -10,19 +10,12 @@ class Prototype < ActiveRecord::Base
     attributed['image'].blank?
   end
 
-
+ MAXIMUM_NUM = 3
   def set_sub_img
     sub_images = thumbnails.sub
-    num = sub_images.count
+    MAXIMUM_NUM.times { |i| sub_images[i] ||= thumbnails.build(status: "sub") }
+    sub_images
 
-    if num == 0
-      3.times { sub_images << thumbnails.build(status: 'sub') }
-    elsif num == 1
-      2.times { sub_images << thumbnails.build(status: 'sub') }
-    elsif num == 2
-        sub_images << thumbnails.build(status: 'sub')
-    end
-    return sub_images
   end
 end
 
