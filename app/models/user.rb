@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   mount_uploader :avatar, AvatarUploader
   has_many :prototypes
+  has_many :likes
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
