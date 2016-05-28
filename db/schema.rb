@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160528085308) do
     t.string   "title",      limit: 255
     t.string   "catch_copy", limit: 255
     t.text     "concept",    limit: 65535
+    t.integer  "likes_num",  limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",    limit: 4
