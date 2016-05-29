@@ -7,7 +7,7 @@ class Prototype < ActiveRecord::Base
   accepts_nested_attributes_for :thumbnails, reject_if: :reject_posts
   validates :title, :catch_copy, :concept, presence: true
 
-  def like_user(user)
+  def liked_by?(user)
    likes.find_by(user_id: user.id)
   end
 
