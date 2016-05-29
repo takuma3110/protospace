@@ -7,7 +7,7 @@
         .media-body
           %h4#top-aligned-media.media-heading
             = @prototype.title
-            - if @prototype.user_id == current_user.id
+            - if user_signed_in? && @prototype.user_id == current_user.id
               = link_to "EDIT", edit_prototype_path(@prototype.id), class: "btn btn-xs navbar-inverse btn-edit"
               = link_to "DELETE", prototype_path(@prototype.id), method: :delete, class: "btn btn-xs navbar-inverse btn-delete"
           .proto-user
@@ -17,7 +17,7 @@
 
     .col-md-6.text-right
       #js-like-buttons
-      = render partial: "likes/likes"
+        = render partial: "prototypes/like", locals: { prototype: @prototype, likes: @likes}
 
   .row
     .col-md-9
