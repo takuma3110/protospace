@@ -36,7 +36,7 @@ class PrototypesController < ApplicationController
 
   def show
     @sub_images = @prototype.thumbnails.sub
-    @likes = Like.where(prototype_id: params[:id]) if user_signed_in?
+    @likes = @prototype.likes
   end
 
   def destroy
