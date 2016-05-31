@@ -4,8 +4,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
 
-  storage :file
-  process convert: 'jpg'
+  # storage :file
+  # process convert: 'jpg'
 
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
@@ -16,7 +16,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   #   # For Rails 3.1+ asset pipeline compatibility:
   #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
   #
-     "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+      '/assets/noimage.png'
    end
 
   # Process files as they are uploaded:
@@ -33,9 +33,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-   def extension_white_list
-     %w(jpg jpeg gif png)
-   end
+   # def extension_white_list
+   #   %w(jpg jpeg gif png)
+   # end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
