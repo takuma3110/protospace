@@ -36,6 +36,7 @@ class PrototypesController < ApplicationController
 
   def show
     @sub_images = @prototype.thumbnails.sub
+    @likes = @prototype.likes
   end
 
   def destroy

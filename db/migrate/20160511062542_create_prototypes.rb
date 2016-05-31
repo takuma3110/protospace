@@ -4,6 +4,7 @@ class CreatePrototypes < ActiveRecord::Migration
       t.string   :title
       t.string   :catch_copy
       t.text   :concept
+      t.integer :likes_num, default: 0
       t.timestamps
     end
     add_reference :prototypes, :user, index: true, foreign_key: true
