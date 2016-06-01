@@ -7,3 +7,5 @@
     %span.anchorjs-icon
       %p
         = comment.text
+      - if comment.user_id == current_user.id
+        = link_to "DELETE", comment_path(comment.id), method: :delete, class: "btn btn-xs navbar-inverse btn-delete"
