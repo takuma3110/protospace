@@ -50,10 +50,10 @@
         = "(#{@comments.count})"
     .col-md-8
       #comments
-        = render partial: "prototypes/comment", collection: @comments
+        = render partial: "prototypes/comment", collection: @comments, locals: { prototype: @protoytpe, comment: @comment }
       %form.form-inline
       - if user_signed_in?
-        = form_for @comment, remote: true do |f|
+        = form_for [@prototype, @comment], remote: true do |f|
           = f.hidden_field :user_id, value: current_user.id
           = f.hidden_field :prototype_id, value: @prototype.id
           %h4 Write a comment
