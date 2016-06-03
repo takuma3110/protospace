@@ -51,4 +51,5 @@ gem 'devise'
 gem 'pry-rails'
 gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
+gem 'kaminari'
 
