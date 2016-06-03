@@ -2,7 +2,7 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:edit,:show, :update, :destroy]
 
   def index
-    @prototypes = Prototype.eager_load(:user, :main_image).order("prototypes.created_at DESC")
+    @prototypes = Prototype.eager_load(:user, :main_image).order("prototypes.created_at DESC").page(params[:page]).per(8)
   end
 
   def new
