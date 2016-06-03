@@ -4,6 +4,7 @@ class Prototype < ActiveRecord::Base
   has_one :main_image, -> {where(status: Thumbnail.statuses[:main])}, class_name: "Thumbnail"
   has_many :sub_images, -> {where(status: Thumbnail.statuses[:sub])}, class_name: "Thumbnail"
   has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   accepts_nested_attributes_for :thumbnails, reject_if: :reject_posts
   validates :title, :catch_copy, :concept, presence: true
 
