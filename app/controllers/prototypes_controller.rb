@@ -1,8 +1,8 @@
 class PrototypesController < ApplicationController
-  before_action :set_prototype, only: [:edit,:show, :update, :destroy]
+  before_action :set_prototype, only: [:edit, :update, :destroy]
 
   def index
-    @prototypes = Prototype.eager_load(:user, :main_image).order("prototypes.created_at DESC")
+    @prototypes = Prototype.eager_load(:user, :main_image).order("prototypes.created_at DESC").page(params[:page])
   end
 
   def new
@@ -35,6 +35,7 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    @prototype = Prototype.eager_load(:comments, :user).find(params[:id])
     @sub_images = @prototype.thumbnails.sub
     @likes = @prototype.likes
     @comments = @prototype.comments

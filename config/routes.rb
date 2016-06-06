@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root 'prototypes#index'
   resources :users, only: [:edit, :show, :update]
 
+  scope module: :prototypes do
+     resources :popular, only: :index
+   end
+
   resources :prototypes do
     scope module: :prototypes do
       resources :likes, only: [:create, :destroy]
