@@ -39,7 +39,6 @@ class PrototypesController < ApplicationController
     @likes = @prototype.likes
     @comments = @prototype.comments
     @comment = Comment.new(prototype_id: @prototype.id)
-    binding.pry
   end
 
   def destroy
