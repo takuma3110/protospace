@@ -1,7 +1,7 @@
 class Prototypes::PopularController < ApplicationController
 
   def index
-    @prototypes = Prototype.order(likes_num: :DESC).page(params[:page]).per(8)
+    @prototypes = Prototype.eager_load(:user, :comments).order(likes_num: :DESC).page(params[:page])
     render 'prototypes/index'
   end
 
