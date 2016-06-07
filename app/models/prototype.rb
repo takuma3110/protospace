@@ -7,6 +7,9 @@ class Prototype < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   accepts_nested_attributes_for :thumbnails, reject_if: :reject_posts
   validates :title, :catch_copy, :concept, presence: true
+  acts_as_taggable
+  acts_as_taggable_on :prototypes
+  acts_as_ordered_taggable_on :prototypes
 
   paginates_per 8
 
