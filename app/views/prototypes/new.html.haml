@@ -29,12 +29,9 @@
         .col-md-12
           %h4 Tag List
           .row
-            .col-md-3
-              %input{type: "text", placeholder: "Web Design"}/
-            .col-md-3
-              %input{type: "text", placeholder: "UI"}/
-            .col-md-3
-              %input{type: "text", placeholder: "Application"}/
+            - Settings.tag_example.each do |exm|
+              .col-md-3
+                = text_field_tag "prototype[tag][]", "", placeholder: exm
     .row.text-center.proto-btn
-      %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Publish
+      = f.submit "投稿する", class: "btn btn-lg btn-primary btn-block"
 
