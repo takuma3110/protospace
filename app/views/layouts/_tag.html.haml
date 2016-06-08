@@ -1,0 +1,10 @@
+.col-xs-4.col-sm-3.col-md-3.tag-list
+  = link_to tag_path(tag.id) do
+    .thumbnail.tag-square
+      = tag.name
+      .tag-meta
+        .label.label-default.tag-list-number
+          %span
+            = tag.taggings_count
+            %i
+              Projects
