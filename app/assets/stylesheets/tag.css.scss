@@ -1,0 +1,35 @@
+.col-xs-4.col-sm-3.col-md-3.tag-list{
+  height: 70px;
+  width: 290px;
+}
+
+.label.label-default.tag-list-number{
+  width: 100%;
+  height: 25px;
+  display: block;
+
+  span{
+    font-size: 18px;
+  }
+}
+
+.thumbnail.tag-square{
+  height: 60px;
+  width: 100%;
+  margin: 10px 0 0 0;
+  background-color: #eee;
+  font-size: 18px;
+  text-align: center;
+  color: #000;
+
+}
+
+.thumbnail.tag-square.tag-show{
+  margin: 0;
+}
+
+.tag-title{
+  width: 100%;
+  margin: 0 0 10px 0 ;
+}
+
