@@ -10,16 +10,16 @@
           = f.text_field :title, placeholder: "Title", required: true, autofocus: true, class: "proto-new-title"
       .col-md-12
         .cover-image-upload
-          .thumbnail_preview
+          .js_thumbnail_preview
             = f.fields_for :thumbnails do |thumbnails_form|
-              = thumbnails_form.file_field :image
+              = thumbnails_form.file_field :image,
               = thumbnails_form.hidden_field :status, value: "main"
       .col-md-12
         %ul.proto-sub-list.list-group
           - 3.times do |i|
             %li.list-group-item.col-md-4
               .image-upload
-                .thumbnail_preview
+                .js_thumbnail_preview
                   = f.fields_for :thumbnails do |thumbnails_form|
                     = thumbnails_form.file_field :image
                     = thumbnails_form.hidden_field :status, value: "sub"
