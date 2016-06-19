@@ -1,15 +1,15 @@
 $(function() {
-  $('.thumbnail_preview').each(function() {
-    var self = $(this);
-    var input = self.find('input[type=file]');
+  $('.js_thumbnail_preview').each(function() {
+    var self = $(this)
+    let input = $(this).find('input[type=file]');
     input.change(function() {
-      var file = $(this).prop('files')[0];
-      var fileReader = new FileReader();
+      let file = $(this).prop('files')[0];
+      let fileReader = new FileReader();
       if (!this.files.length) {
-        return
+        window.alert('error!')
       }
       if (!file.type.match('image.*')) {
-        return
+        window.alert('error!')
       }
       fileReader.onload = function() {
         self.css({
