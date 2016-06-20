@@ -7,9 +7,10 @@
           .user-name_image.row
             .user-name.col-md-10
               = f.text_field :name, placeholder: "NAME", required: true, autofocus: true
-            .user-image.col-md-2.js_thumbnail_preview
+            .user-image.col-md-2
               %button.btn.btn-primary Change image
-              = f.file_field :avatar
+              #js_thumbnail_preview
+                = f.file_field :avatar
           .user-email
           = f.email_field :email, placeholder: "email"
         .col-md-12
