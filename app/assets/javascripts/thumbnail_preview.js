@@ -1,6 +1,6 @@
 $(function() {
 
-  var ids = [$('#js_thumbnail_preview'), $('#js_thumbnail_preview_0'), $('#js_thumbnail_preview_1'), $('#js_thumbnail_preview_2'), $('#js_thumbnail_preview_3')];
+  const ids = [$('#js_thumbnail_preview'), $('#js_thumbnail_preview_0'), $('#js_thumbnail_preview_1'), $('#js_thumbnail_preview_2'), $('#js_thumbnail_preview_3')];
 
   $.each(ids, function(i, value) {
     const input = $(this).find('input[type=file]');
