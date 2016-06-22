@@ -10,8 +10,8 @@
           = f.text_field :title, placeholder: "Title", required: true, autofocus: true, class: "proto-new-title"
       .col-md-12
         .cover-image-upload
-          #js_thumbnail_preview_0
-            = f.fields_for :thumbnails do |thumbnails_form|
+          = f.fields_for :thumbnails do |thumbnails_form|
+            .js_thumbnail_preview
               = thumbnails_form.file_field :image
               = thumbnails_form.hidden_field :status, value: "main"
       .col-md-12
@@ -19,8 +19,8 @@
           - 3.times do |i|
             %li.list-group-item.col-md-4
               .image-upload
-                %div{id: "js_thumbnail_preview_#{i + 1}"}
-                  = f.fields_for :thumbnails do |thumbnails_form|
+                = f.fields_for :thumbnails do |thumbnails_form|
+                  .js_thumbnail_preview
                     = thumbnails_form.file_field :image
                     = thumbnails_form.hidden_field :status, value: "sub"
       .row.proto-description
