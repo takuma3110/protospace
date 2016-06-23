@@ -55,4 +55,5 @@ gem 'carrierwave'
 gem 'rmagick', require: 'RMagick'
 gem 'kaminari'
 gem 'config'
+gem 'fog'
 

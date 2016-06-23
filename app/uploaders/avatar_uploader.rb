@@ -4,7 +4,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
 
-  # storage :file
+
   # process convert: 'jpg'
 
   def store_dir
