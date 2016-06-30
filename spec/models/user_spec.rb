@@ -24,7 +24,7 @@ describe User do
       expect(user.errors[:password]).to include("can't be blank")
     end
 
-    it "is invalid without a password_confirmation although with a password" do
+    it "is invalid without a password_confirmation" do
       user = build(:user, password_confirmation: "hogehoge")
       user.valid?
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
