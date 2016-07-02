@@ -37,5 +37,28 @@ describe UsersController do
         expect(response).to render_template :edit
       end
     end
+
+    describe 'PATCH #update' do
+      before :each do
+        patch :update, params
+      end
+
+      it 'assigns the requested user to @user' do
+        expect(assigns(:user)).to eq user
+      end
+
+      it 'changes @users attribtues' do
+        user.reload
+        expect(user.name).to eq 'sample'
+      end
+
+      it 'redirects user path' do
+        expect(response).to redirect_to user_path
+      end
+
+      it 'sends flash messages' do
+        expect(flash[:success]).to eq 'Your data was successfully updated'
+      end
+    end
   end
 end
