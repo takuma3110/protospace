@@ -6,6 +6,10 @@ describe User do
       expect(build(:user)).to be_valid
     end
 
+    it "has valid factory" do
+      expect(build(:user)).to be_valid
+    end
+
     it "is invalid without a name" do
       user = build(:user, name: nil)
       user.valid?
