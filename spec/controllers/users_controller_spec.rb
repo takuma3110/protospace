@@ -23,4 +23,19 @@ describe UsersController do
         expect(response).to render_template :show
       end
     end
+
+    describe 'GET #edit' do
+        before :each do
+        get :edit, id: user
+      end
+
+      it 'assigns the requested user to @user' do
+        expect(assigns(:user)).to eq user
+      end
+
+      it 'renders the :edit template' do
+        expect(response).to render_template :edit
+      end
+    end
   end
+end
