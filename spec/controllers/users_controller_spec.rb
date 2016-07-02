@@ -69,5 +69,12 @@ describe UsersController do
         expect(response).to redirect_to new_user_session_path
       end
     end
+
+    describe 'PATCH #update' do
+      it 'redirects sign_in page' do
+        patch :update, params
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
   end
 end
