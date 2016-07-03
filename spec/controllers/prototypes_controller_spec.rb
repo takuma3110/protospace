@@ -95,6 +95,10 @@ describe PrototypesController do
       it 'assigns the requested comment to @comment' do
         expect(assigns(:comment)).to be_a_new(Comment)
       end
+
+      it 'assigns likes associate of prototype to @likes' do
+        expect(assigns(:likes)).to eq prototype.likes
+      end
     end
   end
 end
