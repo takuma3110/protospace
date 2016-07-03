@@ -36,6 +36,10 @@ describe PrototypesController do
       it 'assignes the requested prototype to @prototype' do
         expect(assigns(:prototype)).to be_a_new(Prototype)
       end
+
+      it 'renders the :new template' do
+        expect(response).to render_template :new
+      end
     end
   end
 end
