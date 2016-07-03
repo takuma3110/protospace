@@ -104,5 +104,15 @@ describe PrototypesController do
         expect(response).to render_template :show
       end
     end
+
+    describe 'GET #edit' do
+      before do
+        get :edit, id: prototype
+      end
+
+      it 'assigns the requested prototype to @prototype' do
+        expect(assigns(:prototype)).to eq prototype
+      end
+    end
   end
 end
