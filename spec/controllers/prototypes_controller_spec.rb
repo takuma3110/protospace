@@ -62,6 +62,17 @@ describe PrototypesController do
           expect(flash[:success]).to eq 'success'
         end
       end
+      describe 'with invalid attribtues' do
+        before do
+          post :create, invalid_params
+        end
+
+        it 'does not save new prototype' do
+          expect {
+            post :create, invalid_params
+          }.not_to change(Prototype, :count)
+        end
+      end
     end
   end
 end
