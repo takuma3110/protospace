@@ -72,6 +72,10 @@ describe PrototypesController do
             post :create, invalid_params
           }.not_to change(Prototype, :count)
         end
+
+        it 'renders the :new template when prototype dose not save' do
+          expect(response).to render_template :new
+        end
       end
     end
   end
