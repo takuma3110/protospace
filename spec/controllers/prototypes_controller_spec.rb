@@ -99,6 +99,10 @@ describe PrototypesController do
       it 'assigns likes associate of prototype to @likes' do
         expect(assigns(:likes)).to eq prototype.likes
       end
+
+      it 'renders the :show template' do
+        expect(response).to render_template :show
+      end
     end
   end
 end
