@@ -41,5 +41,19 @@ describe PrototypesController do
         expect(response).to render_template :new
       end
     end
+
+    describe 'POST #create' do
+      describe 'with valid attribtues' do
+        before do
+          post :create, params
+        end
+
+        it 'save new prototype' do
+          expect {
+            post :create, params
+          }.to change(Prototype, :count).by(1)
+        end
+      end
+    end
   end
 end
