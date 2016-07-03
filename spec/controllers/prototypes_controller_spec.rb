@@ -22,6 +22,10 @@ describe PrototypesController do
       it 'assigns the requested prototypes to @prototypes' do
         expect(assigns(:prototypes)).to include prototype
       end
+
+      it 'renders the :index template' do
+        expect(response).to render_template :index
+      end
     end
   end
 end
