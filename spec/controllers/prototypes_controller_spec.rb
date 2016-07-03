@@ -91,6 +91,10 @@ describe PrototypesController do
       it 'assigns the requested prototype to @prototype' do
         expect(assigns(:prototype)).to eq prototype
       end
+
+      it 'assigns the requested comment to @comment' do
+        expect(assigns(:comment)).to be_a_new(Comment)
+      end
     end
   end
 end
