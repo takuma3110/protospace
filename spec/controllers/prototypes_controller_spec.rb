@@ -76,6 +76,10 @@ describe PrototypesController do
         it 'renders the :new template when prototype dose not save' do
           expect(response).to render_template :new
         end
+
+        it 'show flash messages of failed' do
+          expect(flash[:alert]).to eq 'failed'
+        end
       end
     end
   end
