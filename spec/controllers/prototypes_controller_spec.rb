@@ -57,6 +57,10 @@ describe PrototypesController do
         it 'redirect to root' do
           expect(response).to redirect_to root_path
         end
+
+        it 'show flash message of success' do
+          expect(flash[:success]).to eq 'success'
+        end
       end
     end
   end
