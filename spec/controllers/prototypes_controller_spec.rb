@@ -82,5 +82,15 @@ describe PrototypesController do
         end
       end
     end
+
+    describe 'GET #show' do
+      before do
+        get :show, id: prototype
+      end
+
+      it 'assigns the requested prototype to @prototype' do
+        expect(assigns(:prototype)).to eq prototype
+      end
+    end
   end
 end
