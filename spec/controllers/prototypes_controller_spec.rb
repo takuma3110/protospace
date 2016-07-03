@@ -53,6 +53,10 @@ describe PrototypesController do
             post :create, params
           }.to change(Prototype, :count).by(1)
         end
+
+        it 'redirect to root' do
+          expect(response).to redirect_to root_path
+        end
       end
     end
   end
