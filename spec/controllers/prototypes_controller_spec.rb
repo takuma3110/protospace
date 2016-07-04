@@ -182,6 +182,10 @@ describe PrototypesController do
         delete :destroy, id: prototype
         expect(assigns(:prototype)).to eq prototype
       end
+
+      it 'deletes the prototype' do
+      expect{ delete :destroy, id: prototype }.to change(Prototype, :count).by(-1)
+     end
     end
   end
 end
