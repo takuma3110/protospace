@@ -166,6 +166,10 @@ describe PrototypesController do
           prototype.reload
           expect(prototype.title).not_to eq 'sample'
         end
+
+        it 'renders the :show template' do
+          expect(response).to render_template :edit
+        end
       end
     end
   end
