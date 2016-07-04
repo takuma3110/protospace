@@ -176,5 +176,12 @@ describe PrototypesController do
         end
       end
     end
+
+    describe 'DELETE #destroy' do
+      it 'assigns the requested prototype to @prototype' do
+        delete :destroy, id: prototype
+        expect(assigns(:prototype)).to eq prototype
+      end
+    end
   end
 end
