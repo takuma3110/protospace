@@ -161,6 +161,11 @@ describe PrototypesController do
         it 'assigns the requested prototype to @prototype' do
           expect(assigns(:prototype)).to eq prototype
         end
+
+        it 'does not save the new prototype' do
+          prototype.reload
+          expect(prototype.title).not_to eq 'sample'
+        end
       end
     end
   end
