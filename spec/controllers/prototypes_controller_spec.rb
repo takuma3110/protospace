@@ -148,6 +148,9 @@ describe PrototypesController do
           expect(response).to redirect_to root_path(prototype)
         end
 
+        it 'shows flash message of updating' do
+          expect(flash[:success]).to eq 'updating is successful'
+        end
       end
     end
   end
