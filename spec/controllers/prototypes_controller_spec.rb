@@ -113,6 +113,10 @@ describe PrototypesController do
       it 'assigns the requested prototype to @prototype' do
         expect(assigns(:prototype)).to eq prototype
       end
+
+      it 'assigns main_image to @main' do
+        expect(assigns(:main_image)).to eq prototype.main_image
+      end
     end
   end
 end
