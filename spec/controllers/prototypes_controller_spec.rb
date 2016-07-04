@@ -170,6 +170,10 @@ describe PrototypesController do
         it 'renders the :show template' do
           expect(response).to render_template :edit
         end
+
+        it 'show flash message to show update prototype unsuccessfully' do
+          expect(flash[:alert]).to eq "failed"
+        end
       end
     end
   end
