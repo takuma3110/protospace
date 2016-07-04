@@ -133,9 +133,17 @@ describe PrototypesController do
         before do
           patch :update, params
         end
+
         it 'assigns the requested prototype to @prototype' do
           expect(assigns(:prototype)).to eq prototype
         end
+
+
+        it 'updates attributes of prototype' do
+          prototype.reload
+          expect(prototype.title).to eq 'sample'
+        end
+
       end
     end
   end
