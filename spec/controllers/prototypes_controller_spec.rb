@@ -186,6 +186,11 @@ describe PrototypesController do
       it 'deletes the prototype' do
       expect{ delete :destroy, id: prototype }.to change(Prototype, :count).by(-1)
      end
+
+     it 'redirects to root_path' do
+       delete :destroy, id: prototype
+       expect(response).to redirect_to root_path
+     end
     end
   end
 end
