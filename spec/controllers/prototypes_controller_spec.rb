@@ -121,6 +121,10 @@ describe PrototypesController do
       it 'assigns sub_images to @sub' do
         expect(assigns(:sub_images)).to eq prototype.set_sub_img
       end
+
+      it 'renders the :edit template' do
+        expect(response).to render_template :edit
+      end
     end
   end
 end
