@@ -126,5 +126,17 @@ describe PrototypesController do
         expect(response).to render_template :edit
       end
     end
+
+
+    describe 'PATCH #update' do
+      describe 'with valid attributes' do
+        before do
+          patch :update, params
+        end
+        it 'assigns the requested prototype to @prototype' do
+          expect(assigns(:prototype)).to eq prototype
+        end
+      end
+    end
   end
 end
