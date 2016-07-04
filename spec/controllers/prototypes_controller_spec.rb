@@ -191,6 +191,11 @@ describe PrototypesController do
        delete :destroy, id: prototype
        expect(response).to redirect_to root_path
      end
+
+     it 'shows flash message' do
+       delete :destroy, id: prototype
+       expect(flash[:success]).to eq "deleting is successful"
+     end
     end
   end
 end
