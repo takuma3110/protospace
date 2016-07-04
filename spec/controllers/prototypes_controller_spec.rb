@@ -213,5 +213,12 @@ describe PrototypesController do
         expect(response).to redirect_to new_user_session_path
       end
     end
+
+    describe 'GET #edit' do
+      it 'redirects sign_in page' do
+        get :edit, id: prototype.id
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
   end
 end
