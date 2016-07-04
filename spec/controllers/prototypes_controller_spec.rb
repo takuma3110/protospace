@@ -144,6 +144,10 @@ describe PrototypesController do
           expect(prototype.title).to eq 'sample'
         end
 
+        it 'redirects to root_path'  do
+          expect(response).to redirect_to root_path(prototype)
+        end
+
       end
     end
   end
