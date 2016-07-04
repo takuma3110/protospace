@@ -117,6 +117,10 @@ describe PrototypesController do
       it 'assigns main_image to @main' do
         expect(assigns(:main_image)).to eq prototype.main_image
       end
+
+      it 'assigns sub_images to @sub' do
+        expect(assigns(:sub_images)).to eq prototype.set_sub_img
+      end
     end
   end
 end
