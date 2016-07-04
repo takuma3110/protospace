@@ -152,6 +152,16 @@ describe PrototypesController do
           expect(flash[:success]).to eq 'updating is successful'
         end
       end
+
+      describe 'with invalid attributes' do
+        before do
+          patch :update, invalid_params
+        end
+
+        it 'assigns the requested prototype to @prototype' do
+          expect(assigns(:prototype)).to eq prototype
+        end
+      end
     end
   end
 end
