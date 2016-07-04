@@ -3,11 +3,11 @@ require 'rails_helper'
 
 describe PrototypesController do
    let!(:prototype) { create(:prototype, :with_sub_images) }
-   let(:params) {{
+   let!(:params) {{
      id: prototype.id,
      prototype: attributes_for(:prototype, title: 'sample')
    }}
-   let(:invalid_params) {{
+   let!(:invalid_params) {{
      id: prototype.id,
      prototype: attributes_for(:prototype, title: nil)
    }}
@@ -196,6 +196,15 @@ describe PrototypesController do
        delete :destroy, id: prototype
        expect(flash[:success]).to eq "deleting is successful"
      end
+    end
+  end
+
+  describe 'without user login' do
+    describe 'GET #new' do
+      it 'redirects sign_in page' do
+        get :new
+        expect(response).to redirect_to new_user_session_path
+      end
     end
   end
 end
