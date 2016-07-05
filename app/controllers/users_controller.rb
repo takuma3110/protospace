@@ -5,9 +5,9 @@ class UsersController < ApplicationController
   end
 
   def update
-     flash[:success] = 'Your data was successfully updated'
+    flash[:success] = 'Your data was successfully updated'
     @user.update(user_params)
-     redirect_to action: :show
+    redirect_to action: :show
   end
 
   def show
