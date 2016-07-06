@@ -55,6 +55,7 @@ group :test do
   gem "launchy"
   gem "poltergeist"
   gem "rspec-rails"
+  gem "selenium-webdriver"
 end
 
 gem 'haml'
