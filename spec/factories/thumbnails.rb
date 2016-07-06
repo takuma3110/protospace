@@ -1,7 +1,7 @@
 include ActionDispatch::TestProcess
 
 FactoryGirl.define do
-  factory :thumbnail do
+  factory :thumbnail, class: Thumbnail do
     image { fixture_file_upload("spec/fixtures/img/sample.png", 'image/png') }
 
     trait :main do

@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :show]
+  before_action :set_user, only: [:edit, :show, :update]
 
   def edit
   end
 
   def update
-     flash[:success] = 'Your data was successfully updated'
-    current_user.update(user_params)
-     redirect_to action: :show
+    flash[:success] = 'Your data was successfully updated'
+    @user.update(user_params)
+    redirect_to action: :show
   end
 
   def show

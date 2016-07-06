@@ -1,5 +1,6 @@
 class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @prototypes = Prototype.eager_load(:user, :main_image).order("prototypes.created_at DESC").page(params[:page])
