@@ -8,7 +8,7 @@ class PrototypesController < ApplicationController
 
   def new
     @prototype = Prototype.new
-    @prototype.thumbnails.build
+    @prototype.thumbnails.new
   end
 
   def create
