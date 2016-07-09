@@ -38,6 +38,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem "factory_girl_rails"
+  gem "faker"
 end
 
 group :development do
@@ -49,12 +50,13 @@ group :development do
 end
 
 group :test do
-  gem "faker"
   gem "capybara"
   gem "database_cleaner"
   gem "launchy"
   gem "poltergeist"
   gem "rspec-rails"
+  gem "capybara-webkit"
+  gem "selenium-webdriver"
 end
 
 gem 'haml'
