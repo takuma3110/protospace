@@ -9,6 +9,7 @@ RSpec.feature 'user', type: :feature do
 
   it 'creates new user', js: true do
     visit root_path
+    page.save_screenshot 'sample.png'
     click_on 'Get Started'
     click_on 'Sign up now'
     fill_in 'user_name', with: user.name
@@ -41,7 +42,7 @@ RSpec.feature 'user', type: :feature do
     fill_in 'prototype_catch_copy', with: prototype.catch_copy
     fill_in 'prototype_concept', with: prototype.concept
     attach_file 'prototype[thumbnails_attributes][0][image]', File.join(Rails.root, '/spec/fixtures/img/sample.png'),  visible: false
-    3.times do |i|
+    1.upto(3) do |i|
       attach_file "prototype[thumbnails_attributes][#{i}][image]", File.join(Rails.root, '/spec/fixtures/img/sample.png'), visible: false
     end
     click_on '投稿する'
